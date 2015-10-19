@@ -1,46 +1,11 @@
 # blackjack.rb
-## All done without looking at solutions! Boom!
-## In hindsight, could probably have just used nested arrays instead of getting hashes involved
+
+## In hindsight...
+# 1) could probably have just used nested arrays instead of getting hashes involved
+# 2) didn't need to be crazy with building the deck. I know it's hard to read
 
 
-=begin
-initialize 'deck', representing actual card value and suit
-initizlize 'lookup' to represent the numeric value of each card in 'deck'
-
-define 'money' for 'player'
-define 'score' counting
-define 'win_lose' for a player
-
-loop game play
-  'player' bets 'money'
-
-  initial deal
-    alternate deal to 'player', then to 'dealer' twice
-    display players cards (1st and 2nd)
-    display dealers card (1st only)
-
-  loop dealing
-    loop (
-      'player' hit or stay
-      display 'players' cards
-      'score' 'player'
-      'win_lose' 'player'
-          end round )
-    loop (
-      'dealer' hit or stay
-      display new 'dealer' cards
-      'score' 'dealer'
-      'win_lose' 'dealer'
-          end round )
-  end
-  
-  display win/lose message
-  update and display 'money'
-  
-  prompt play again or quit?
-=end
-    
-require 'pry'  
+#require 'pry'  
   
 def say(input)
   puts "=> #{input}"
