@@ -1,5 +1,5 @@
 # Notes:
-# - I improvised a fair amount. It's the best way I know to practice.
+# - I improvised a fair amount. I enjoy the practice.
 # - I felt that a dealer is a player, but does not have all of the same 
 #   features as other players. Also, I created 'computer' and 'human' players 
 #   with the intention of allowing for multiple players, though I did not fully  
@@ -10,9 +10,6 @@
 #   each method or in the game engine. It seems better to use them in the
 #   engine so that you can be more flexible in how the method results are
 #   displayed. Is that a good srategy? Does it matter that much?
-# - There seems to be a Ruby grammer error in the method ending at line 272 
-#   according to the editor, (mismatched indentation) but I'm not seeing it. 
-#   Do you see it?
 #
 #   Thanks for your input
 
@@ -255,20 +252,20 @@ end
 
 
 class Deck
-	attr_accessor :cards
-	
-	def initialize
+  attr_accessor :cards
+
+  def initialize
 	  @cards = build_deck(2)
-	end
-	
-	def build_deck(num_of_decks)
-	  deck = []
-	  num_of_decks.to_i.times do
-	    Cards::LABELS.each do |label| 
-	      ['H','D','S','C'].each {|suit| deck << Cards.new(label, suit)}
-	    end
-	  end
-	  return deck
+  end
+  
+  def build_deck(num_of_decks)
+    deck = []
+    num_of_decks.to_i.times do
+      Cards::LABELS.each do |label|
+        ['H','D','S','C'].each {|suit| deck << Cards.new(label, suit)}
+      end
+    end
+    return deck
   end
   
   def shuffle_cards(num_of_shuffles=2)
