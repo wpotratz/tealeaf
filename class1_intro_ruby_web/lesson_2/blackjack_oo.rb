@@ -101,7 +101,7 @@ module Hand
                   	  when card.label.to_i == 0 then 10
                   	  else card.label.to_i
             	      end
-  	end
+    end
     # Adjust total based on number of 'aces' in hand
   	hand.select {|card| card.label == 'A'}.each do |ace| 
   	  if hand_total > Game::BLACKJACK_TOTAL
