@@ -95,21 +95,19 @@ module Hand
     hand_total = 0
     # Assign values based on 'label'
     hand.each do |card|  
-      hand_total +=  case  
-                  	  when card.label == 'A' then 11
-                  	  when card.label == '?' then 0
-                  	  when card.label.to_i == 0 then 10
-                  	  else card.label.to_i
-            	      end
+      hand_total += case  
+                      when card.label == 'A' then 11
+                      when card.label == '?' then 0
+                      when card.label.to_i == 0 then 10
+                      else card.label.to_i
+                    end
     end
     # Adjust total based on number of 'aces' in hand
-  	hand.select {|card| card.label == 'A'}.each do |ace| 
-  	  if hand_total > Game::BLACKJACK_TOTAL
-  	    then hand_total -= 10
-  	  end
-  	end
+    hand.select {|card| card.label == 'A'}.each do |ace| 
+      hand_total -= 10 if hand_total > Game::BLACKJACK_TOTAL
+    end
     # return total
-  	return hand_total
+    return hand_total
   end
   
   def hand_display
